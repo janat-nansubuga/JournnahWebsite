@@ -3,25 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Company Name</title>
+    <title>Journnah - Where the Qur'an Meets Journaling</title>
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 50px;
-        }
-        h1 {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #F4A261, #2A9D8F); /* Muted orange to green gradient */
             color: #333;
         }
+
+        /* Centered Content Box */
+        .container {
+            background: white;
+            padding: 40px;
+            margin: 80px auto;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h1 {
+            color: #2A9D8F; /* Muted green */
+            font-size: 28px;
+        }
+
         p {
             color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Styled Button Link */
+        .contact-btn {
+            display: inline-block;
+            background-color: #F4A261; /* Muted orange */
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #E76F51; /* Darker orange */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Journnah</h1>
-    <p>Business Name: 16684572 Canada Inc..</p>
-    <p>Where the Qur'an Meets Journaling</p>
-    <p>Contact us at: <a href="mailto:journnahapp@journnah.ca">journnahapp@journnah.ca</a></p>
+
+    <div class="container">
+        <h1>Welcome to Journnah</h1>
+        <p><strong>Business Name:</strong> 16684572 Canada Inc.</p>
+        <p>Where the Qur'an Meets Journaling</p>
+        <a href="mailto:journnahapp@journnah.ca" class="contact-btn">Contact Us</a>
+    </div>
+
 </body>
 </html>
