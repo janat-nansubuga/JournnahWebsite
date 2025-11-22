@@ -3,67 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journnah - Where the Qur'an Meets Journaling! :) </title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #F4A261, #2A9D8F); /* Muted orange to green gradient */
-            color: #333;
-        }
-
-        /* Centered Content Box */
-        .container {
-            background: white;
-            padding: 40px;
-            margin: 80px auto;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Typography */
-        h1 {
-            color: #2A9D8F; /* Muted green */
-            font-size: 28px;
-        }
-
-        p {
-            color: #555;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        /* Styled Button Link */
-        .contact-btn {
-            display: inline-block;
-            background-color: #F4A261; /* Muted orange */
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .contact-btn:hover {
-            background-color: #E76F51; /* Darker orange */
-        }
-    </style>
+    <meta name="description" content="Journnah - A minimalist Islamic journaling app for reflecting on Quranic verses and spiritual wellness.">
+    <title>Journnah - Islamic Journaling & Spiritual Reflection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Journnah</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h1>Welcome to Journnah</h1>
-        <p><strong>Business Name:</strong> 16684572 Canada Inc.</p>
-        <p>Where the Qur'an Meets Journaling</p>
-        <p>Coming soon to the AppStore</p>
-        <a href="mailto:journnahapp@journnah.ca" class="contact-btn">Contact Us</a>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Reflect. Journal. Grow.</h1>
+                <p class="hero-subtitle">A minimalist Islamic journaling app designed to deepen your connection with the Quran through guided reflection and spiritual wellness.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">Explore Features</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Journnah Offers</h2>
+                <p class="section-subtitle">A comprehensive spiritual wellness companion</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M2 12h20"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Quranic Reflections</h3>
+                    <p class="feature-description">Select any verse from the Quran and engage in deep, meaningful reflection. Our guided journaling helps you connect with divine guidance on a personal level.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Morning & Evening Reflections</h3>
+                    <p class="feature-description">Start your day with divine guidance and end it with contemplation. Time-based reflection prompts help you maintain a consistent spiritual practice.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Names of Allah</h3>
+                    <p class="feature-description">Reflect on the beautiful names and attributes of Allah. Each name comes with guidance to help you understand and internalize divine qualities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Dhikr Collection</h3>
+                    <p class="feature-description">Access a curated collection of dhikr (remembrance) with translations and meanings. Strengthen your connection through regular remembrance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Personal Journaling</h3>
+                    <p class="feature-description">Write your thoughts, insights, and reflections in a beautiful, distraction-free environment. Track your mood and organize entries with tags.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Mood Tracking</h3>
+                    <p class="feature-description">Track your emotional state alongside your reflections. Understand patterns in your spiritual journey and personal growth over time.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Review & Insights</h3>
+                    <p class="feature-description">Review your past reflections, see patterns, and gain insights into your spiritual growth. Revisit meaningful moments from your journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Surprise Me</h3>
+                    <p class="feature-description">Let the app suggest verses for reflection. Discover new insights and verses you might not have encountered otherwise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">A Calm Space for Spiritual Growth</h2>
+                    <p class="about-description">
+                        Journnah is designed with a minimalist, Stoic-inspired aesthetic that creates a peaceful environment for reflection. We believe that spiritual growth comes from consistent, mindful practice—and our app is built to support that journey.
+                    </p>
+                    <p class="about-description">
+                        Whether you're starting your day with morning reflection, ending it with evening contemplation, or taking a moment anytime to connect with divine guidance, Journnah provides the tools and structure you need.
+                    </p>
+                    <div class="about-features-list">
+                        <div class="about-feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Offline support for uninterrupted reflection</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Beautiful Arabic text with translations</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Privacy-first: all data stored locally</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <span class="check-icon">✓</span>
+                            <span>Dark mode for comfortable reading</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy Section -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2 class="section-title">Thoughtfully Designed</h2>
+                <p class="philosophy-text">
+                    Every element of Journnah is crafted to minimize distraction and maximize focus. Our warm, earthy color palette and generous spacing create a calming atmosphere that encourages deep reflection. The interface is clean, intuitive, and respectful of your time and attention.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Begin Your Journey</h2>
+                <p class="cta-subtitle">Journnah is coming soon to iOS and Android. Join us in creating a more mindful, reflective spiritual practice.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:info@journnah.ca" class="btn btn-primary btn-large">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">Journnah</span>
+                    <p class="footer-tagline">Reflect. Journal. Grow.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:info@journnah.ca">Contact</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Journnah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
