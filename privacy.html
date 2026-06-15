@@ -1,149 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Journnah Privacy Policy — what we collect, how we keep it, the choices that remain yours.">
-    <title>Privacy — Journnah</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Journnah Privacy Policy — what we collect, how we keep it, the choices that remain yours." />
+<title>Privacy — Journnah</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="legal.css" />
 </head>
 <body>
-
-    <header class="running-header ink-in">
-        <a href="/" style="text-decoration:none;"><span class="brand">Journnah <span class="vol">· vol. iv</span></span></a>
-        <span class="date">Appendix A &nbsp;·&nbsp; on privacy</span>
-    </header>
-
-    <div class="page">
-
-        <section class="legal-page ink-in">
-
-            <header class="legal-head">
-                <span class="small-caps">Appendix A — folio i</span>
-                <h1>On privacy, <em class="ochre">and what is yours.</em></h1>
-                <p class="meta">Last revised — 18 may 2026</p>
-            </header>
-
-            <div class="legal-body">
-
-                <p>Journnah ("we", "our", "us") is committed to protecting your privacy. This appendix records what we collect when you use the app, how we keep it, and the choices that remain yours. The short version: your entries belong to you, and we have no business reading them.</p>
-
-                <svg class="rule long" viewBox="0 0 280 6" aria-hidden="true">
-                    <path d="M2 3 Q 70 2.4 140 3 T 278 3"
-                          fill="none" stroke="currentColor" stroke-width="0.7"
-                          stroke-linecap="round" opacity="0.7"/>
-                </svg>
-
-                <h2><span class="num">i.</span> What we collect</h2>
-
-                <p><strong>Account information.</strong> When you sign in, we collect your name and email address through Clerk, our authentication provider. If you use Apple or Google sign-in, we receive whatever those services share with us (typically just your name and email).</p>
-
-                <p><strong>Journal content.</strong> The entries, titles, tags, mood markings, and verse references you write in the app. This is your personal content — it belongs to you, in every sense.</p>
-
-                <p><strong>Location.</strong> If you grant location permission, we read your device's coordinates only to calculate local prayer times. Location is used in the moment and never stored, transmitted, or shared.</p>
-
-                <p><strong>Usage and device.</strong> We do not currently collect analytics or crash data. If we ever add crash reporting, we will update this page first.</p>
-
-                <h2><span class="num">ii.</span> How we keep it</h2>
-
-                <p><strong>On your device.</strong> Entries live in an encrypted SQLite database on your device. If you use the app without signing in, your data never leaves the device.</p>
-
-                <p><strong>Cloud sync.</strong> If you sign in and enable sync, your entries and tags are stored in Supabase — isolated by your account, protected by row-level security. Sync can be turned off in Settings at any time.</p>
-
-                <p><strong>Authentication.</strong> Credentials are managed by Clerk. We do not store passwords ourselves.</p>
-
-                <h2><span class="num">iii.</span> How we use what we know</h2>
-                <ul>
-                    <li>To provide the journaling and reflection features of the app.</li>
-                    <li>To sync entries across your devices when you are signed in.</li>
-                    <li>To send optional morning and evening reminders — only if you ask for them.</li>
-                    <li>To calculate local prayer times using your device's location.</li>
-                </ul>
-
-                <p>We do not use your journal content to train models, to serve advertising, or for any purpose other than providing the app to you.</p>
-
-                <h2><span class="num">iv.</span> Who else sees anything</h2>
-
-                <p>We do not sell, rent, or share your personal information with third parties for marketing. We share data only with the service providers necessary to operate the app:</p>
-                <ul>
-                    <li><strong>Clerk</strong> — authentication (clerk.com)</li>
-                    <li><strong>Supabase</strong> — cloud storage for signed-in users (supabase.com)</li>
-                    <li><strong>Quran API</strong> — retrieves verse text; no personal data accompanies these requests</li>
-                </ul>
-
-                <p>We may disclose information if required by law, or to protect the safety and rights of our users.</p>
-
-                <h2><span class="num">v.</span> The choices that remain yours</h2>
-
-                <p><strong>Delete your entries.</strong> Individually, or all at once, from within the app.</p>
-                <p><strong>Disable cloud sync.</strong> Use the app offline by not signing in, or by signing out at any time.</p>
-                <p><strong>Turn off notifications.</strong> Reminder notifications can be disabled in Settings or your device's notification preferences.</p>
-                <p><strong>Revoke location access.</strong> At any time, in your device's settings. Prayer time calculation will be unavailable without it.</p>
-                <p><strong>Delete your account.</strong> Write to <a href="mailto:journnahapp@journnah.ca">journnahapp@journnah.ca</a>. We will process the request within thirty days.</p>
-
-                <h2><span class="num">vi.</span> Children</h2>
-
-                <p>Journnah is not directed at children under the age of thirteen. We do not knowingly collect personal information from children under thirteen. If you believe a child has provided us with such information, please write to us and we will delete it promptly.</p>
-
-                <h2><span class="num">vii.</span> Retention</h2>
-
-                <p>We retain your data for as long as your account is active. If you delete your account, we will delete your data from our systems within thirty days, except where retention is required by law.</p>
-
-                <h2><span class="num">viii.</span> Security</h2>
-
-                <p>Journal data is stored locally with SQLite and, when synced, transmitted over HTTPS to Supabase. Access to cloud data is protected by row-level security — only you can read or write your own entries. We take reasonable care, but no method of transmission or storage is ever entirely without risk.</p>
-
-                <h2><span class="num">ix.</span> Changes to this page</h2>
-
-                <p>We may revise this Privacy Policy from time to time. Material changes will be noted by updating the date at the top of this page. Continued use of the app after a revision constitutes acceptance of the new policy.</p>
-
-                <h2><span class="num">x.</span> Write to us</h2>
-
-                <p>If you have questions or concerns about this policy or your data, please contact us at <a href="mailto:journnahapp@journnah.ca">journnahapp@journnah.ca</a>.</p>
-
-                <svg class="rule long closing-rule" viewBox="0 0 280 6" aria-hidden="true">
-                    <path d="M2 3 Q 70 2.4 140 3 T 278 3"
-                          fill="none" stroke="currentColor" stroke-width="0.7"
-                          stroke-linecap="round" opacity="0.7"/>
-                </svg>
-
-                <p class="closing">Journnah is operated from Canada. This policy is governed by the laws of Canada.</p>
-            </div>
-
-        </section>
-
-        <footer class="page-footer">
-            <span class="chapter">"Appendix A — on privacy"</span>
-            <span class="folio">i</span>
-        </footer>
-
+  <header class="site">
+    <div class="wrap bar">
+      <a class="brandlock" href="index.html">
+        <span id="logo"></span>
+        <span class="wm">Journnah<span class="dot">.</span></span>
+      </a>
+      <nav class="main">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="privacy.html" class="here">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
     </div>
+  </header>
 
-    <nav class="tab-strip" aria-label="Sections">
-        <a class="tab" href="/#preface">
-            <span class="dot" aria-hidden="true"></span>
-            Preface
-        </a>
-        <a class="tab" href="/#features">
-            <span class="dot" aria-hidden="true"></span>
-            Contents
-        </a>
-        <a class="tab active" href="/privacy.html">
-            <span class="dot" aria-hidden="true"></span>
-            Privacy
-        </a>
-        <a class="tab" href="/terms.html">
-            <span class="dot" aria-hidden="true"></span>
-            Terms
-        </a>
-        <a class="tab" href="mailto:journnahapp@journnah.ca">
-            <span class="dot" aria-hidden="true"></span>
-            Write
-        </a>
-    </nav>
+  <div class="legal">
+    <div class="wrap">
+      <header class="legal-head">
+        <span class="eyebrow">On privacy</span>
+        <h1>On privacy, <span class="ac">and what is yours.</span></h1>
+        <p class="meta">Last revised — 18 May 2026</p>
+      </header>
 
+      <div class="legal-body">
+        <p class="standfirst">Journnah ("we", "our", "us") is committed to protecting your privacy. This page records what we collect when you use the app, how we keep it, and the choices that remain yours. The short version: your entries belong to you, and we have no business reading them.</p>
+        <hr class="rule" />
+
+        <h2><span class="num">i.</span> What we collect</h2>
+        <p><strong>Account information.</strong> When you sign in, we collect your name and email address through Clerk, our authentication provider. If you use Apple or Google sign-in, we receive whatever those services share with us (typically just your name and email).</p>
+        <p><strong>Journal content.</strong> The entries, titles, tags, mood markings, and verse references you write in the app. This is your personal content — it belongs to you, in every sense.</p>
+        <p><strong>Location.</strong> If you grant location permission, we read your device's coordinates only to calculate local prayer times. Location is used in the moment and never stored, transmitted, or shared.</p>
+        <p><strong>Usage and device.</strong> We do not currently collect analytics or crash data. If we ever add crash reporting, we will update this page first.</p>
+
+        <h2><span class="num">ii.</span> How we keep it</h2>
+        <p><strong>On your device.</strong> Entries live in an encrypted SQLite database on your device. If you use the app without signing in, your data never leaves the device.</p>
+        <p><strong>Cloud sync.</strong> If you sign in and enable sync, your entries and tags are stored in Supabase — isolated by your account, protected by row-level security. Sync can be turned off in Settings at any time.</p>
+        <p><strong>Authentication.</strong> Credentials are managed by Clerk. We do not store passwords ourselves.</p>
+
+        <h2><span class="num">iii.</span> How we use what we know</h2>
+        <ul>
+          <li>To provide the journaling and reflection features of the app.</li>
+          <li>To sync entries across your devices when you are signed in.</li>
+          <li>To send optional morning and evening reminders — only if you ask for them.</li>
+          <li>To calculate local prayer times using your device's location.</li>
+        </ul>
+        <p>We do not use your journal content to train models, to serve advertising, or for any purpose other than providing the app to you.</p>
+
+        <h2><span class="num">iv.</span> Who else sees anything</h2>
+        <p>We do not sell, rent, or share your personal information with third parties for marketing. We share data only with the service providers necessary to operate the app:</p>
+        <ul>
+          <li><strong>Clerk</strong> — authentication (clerk.com)</li>
+          <li><strong>Supabase</strong> — cloud storage for signed-in users (supabase.com)</li>
+          <li><strong>Quran API</strong> — retrieves verse text; no personal data accompanies these requests</li>
+        </ul>
+        <p>We may disclose information if required by law, or to protect the safety and rights of our users.</p>
+
+        <h2><span class="num">v.</span> The choices that remain yours</h2>
+        <p><strong>Delete your entries.</strong> Individually, or all at once, from within the app.</p>
+        <p><strong>Disable cloud sync.</strong> Use the app offline by not signing in, or by signing out at any time.</p>
+        <p><strong>Turn off notifications.</strong> Reminder notifications can be disabled in Settings or your device's notification preferences.</p>
+        <p><strong>Revoke location access.</strong> At any time, in your device's settings. Prayer time calculation will be unavailable without it.</p>
+        <p><strong>Delete your account.</strong> Write to <a href="mailto:journnahapp@journnah.ca">journnahapp@journnah.ca</a>. We will process the request within thirty days.</p>
+
+        <h2><span class="num">vi.</span> Children</h2>
+        <p>Journnah is not directed at children under the age of thirteen. We do not knowingly collect personal information from children under thirteen. If you believe a child has provided us with such information, please write to us and we will delete it promptly.</p>
+
+        <h2><span class="num">vii.</span> Retention</h2>
+        <p>We retain your data for as long as your account is active. If you delete your account, we will delete your data from our systems within thirty days, except where retention is required by law.</p>
+
+        <h2><span class="num">viii.</span> Security</h2>
+        <p>Journal data is stored locally with SQLite and, when synced, transmitted over HTTPS to Supabase. Access to cloud data is protected by row-level security — only you can read or write your own entries. We take reasonable care, but no method of transmission or storage is ever entirely without risk.</p>
+
+        <h2><span class="num">ix.</span> Changes to this page</h2>
+        <p>We may revise this Privacy Policy from time to time. Material changes will be noted by updating the date at the top of this page. Continued use of the app after a revision constitutes acceptance of the new policy.</p>
+
+        <h2><span class="num">x.</span> Write to us</h2>
+        <p>If you have questions or concerns about this policy or your data, please contact us at <a href="mailto:journnahapp@journnah.ca">journnahapp@journnah.ca</a>.</p>
+
+        <hr class="rule" />
+        <p class="closing">Journnah is operated from Canada. This policy is governed by the laws of Canada.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div class="wrap row">
+      <span class="chapter">"On privacy, and what is yours."</span>
+      <div class="links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <span class="folio">© 2026 Journnah</span>
+    </div>
+  </footer>
+
+  <script src="logo.js"></script>
 </body>
 </html>

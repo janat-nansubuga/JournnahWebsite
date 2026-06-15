@@ -1,257 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Journnah — a minimalist Islamic journaling app for reflecting on Quranic verses and spiritual wellness.">
-    <title>Journnah — Islamic Journaling & Spiritual Reflection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Journnah — a minimalist Islamic journaling app for reflecting on Qur'anic verses and spiritual wellness." />
+<title>Journnah — Islamic Journaling &amp; Spiritual Reflection</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+  :root { --page: #FBF8F2; --gut: clamp(20px, 5vw, 64px); }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); background: var(--page); color: var(--ink-900); line-height: 1.5; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gut); }
+  a { color: inherit; text-decoration: none; }
+  em { font-style: italic; }
+  .serif { font-family: var(--font-serif); }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-deep); }
+  .ac { font-style: italic; color: var(--brand); }
+  .rule { height: 1px; background: var(--ink-900); opacity: 0.12; border: 0; }
+  .action { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--brand); font-size: 17px; }
+  .action .un { border-bottom: 1.5px solid var(--brand); padding-bottom: 1px; }
+  .action svg { width: 16px; height: 16px; }
+
+  /* ---------- header ---------- */
+  header.site { position: sticky; top: 0; z-index: 40; background: rgba(251,248,242,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  header.site .bar { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .brandlock { display: flex; align-items: center; gap: 11px; }
+  .brandlock .wm { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-900); }
+  .brandlock .wm .dot { color: var(--accent); }
+  nav.main { display: flex; align-items: center; gap: 30px; }
+  nav.main a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
+  nav.main a:hover { color: var(--brand); }
+  nav.main .vol { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--text-subtle); font-size: 14px; }
+  .menu-tag { display: none; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(44px, 7vw, 88px) 0 clamp(36px, 5vw, 60px); }
+  .hero .grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+  .hero h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(46px, 7vw, 80px); line-height: 1.02; letter-spacing: -0.025em; margin: 18px 0 22px; }
+  .hero .lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.6; color: var(--text-body); max-width: 30ch; }
+  .hero .cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+  .store { display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 20px; border-radius: 13px; font-weight: 600; font-size: 14px; }
+  .store.dark { background: var(--brand); color: #F3F8F5; }
+  .store.line { background: transparent; color: var(--ink-900); border: 1px solid var(--border-strong); }
+  .store svg { width: 19px; height: 19px; }
+  .hero .soon { margin-top: 16px; font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--text-subtle); }
+
+  /* phone in hero */
+  .device { width: 300px; height: 620px; border-radius: 44px; position: relative; overflow: hidden; margin: 0 auto;
+    box-shadow: 0 0 0 10px #14120f, 0 0 0 12px #322e28, 0 40px 80px -28px rgba(20,30,26,0.55); }
+  .notch { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 96px; height: 26px; background: #14120f; border-radius: 999px; z-index: 5; }
+  .scr { position: absolute; inset: 0; background: #FBF8F2; display: flex; flex-direction: column; }
+  .scr .sb { height: 44px; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 22px 5px; font-size: 13px; font-weight: 700; color: var(--ink-900); }
+  .scr .tb { display: flex; align-items: center; justify-content: space-between; padding: 4px 22px 6px; }
+  .scr .tb .wm { font-family: var(--font-serif); font-size: 17px; font-weight: 600; }
+  .scr .tb .wm .dot { color: var(--accent); }
+  .scr .tb .mt { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+  .scr .pad { padding: 0 22px; }
+  .scr .hr { height: 1px; background: var(--ink-900); opacity: 0.12; margin: 12px 0; }
+  .scr .hr.t { opacity: 0.07; }
+  .scr .kick { text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-deep); }
+  .scr .ar { font-family: var(--font-arabic); font-size: 22px; line-height: 1.95; direction: rtl; text-align: center; margin: 12px 0 10px; color: var(--ink-900); }
+  .scr .tr { font-family: var(--font-serif); font-size: 19px; font-weight: 500; line-height: 1.38; text-align: center; letter-spacing: -0.01em; }
+  .scr .rf { text-align: center; font-family: var(--font-serif); font-style: italic; font-size: 12px; color: var(--text-muted); margin-top: 5px; }
+  .scr .cta2 { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 14px 0 2px; font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--brand); }
+  .scr .cta2 .un { border-bottom: 1.5px solid var(--brand); }
+  .scr .mini { display: flex; justify-content: center; margin-top: 14px; }
+  .scr .mini .m { font-size: 11px; color: var(--text-muted); font-weight: 600; padding: 0 11px; position: relative; }
+  .scr .mini .m b { font-family: var(--font-serif); color: var(--brand); font-size: 14px; }
+  .scr .mini .m + .m::before { content: ''; position: absolute; left: 0; top: 10%; height: 80%; width: 1px; background: var(--border-strong); }
+  .scr .erow { display: flex; gap: 11px; padding: 12px 0 0; align-items: flex-start; }
+  .scr .erow + .erow { border-top: 1px solid var(--line); padding-top: 11px; margin-top: 11px; }
+  .scr .erow .sp { width: 3px; align-self: stretch; min-height: 34px; border-radius: 2px; }
+  .scr .erow .er { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-subtle); }
+  .scr .erow .et { font-family: var(--font-serif); font-size: 15px; font-weight: 600; line-height: 1.2; margin-top: 3px; }
+  .scr .erow .tm { margin-left: auto; font-size: 11px; color: var(--text-subtle); font-style: italic; flex: 0 0 auto; }
+  .scr .seclab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); margin-top: 4px; }
+
+  /* ---------- section frame ---------- */
+  section.band { padding: clamp(54px, 7vw, 96px) 0; }
+  .section-head { max-width: 760px; }
+  .section-head h2 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(32px, 4.5vw, 52px); line-height: 1.1; letter-spacing: -0.02em; margin-top: 14px; }
+
+  /* features */
+  .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(30px, 5vw, 64px); margin-top: 30px; }
+  .feat { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 24px 0; border-top: 1px solid var(--line); }
+  .feat .num { font-family: var(--font-serif); font-style: italic; font-size: 19px; color: var(--text-subtle); padding-top: 2px; }
+  .feat .ft { font-family: var(--font-serif); font-size: 23px; font-weight: 600; line-height: 1.18; }
+  .feat .fd { font-size: 15px; line-height: 1.55; color: var(--text-muted); margin-top: 8px; }
+
+  /* about */
+  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(30px, 6vw, 80px); align-items: start; }
+  .about p.lead { font-size: clamp(17px, 2vw, 20px); line-height: 1.6; color: var(--text-body); margin-bottom: 16px; }
+  .about p.aside { font-size: 16px; line-height: 1.6; color: var(--text-muted); }
+  .about-list { list-style: none; }
+  .about-list li { display: flex; gap: 13px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); font-family: var(--font-serif); font-size: 19px; color: var(--ink-900); }
+  .about-list li:first-child { border-top: 1px solid var(--line); }
+  .about-list li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--brass-500); flex: 0 0 auto; transform: translateY(-2px); }
+
+  /* philosophy band (reversed) */
+  .philosophy { background: radial-gradient(120% 120% at 50% 0%, #246152 0%, #1B4A3F 55%, #133A30 100%); color: #EAF1ED; text-align: center; }
+  .philosophy .eyebrow { color: var(--brass-200); }
+  .philosophy blockquote { font-family: var(--font-serif); font-weight: 500; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.32; letter-spacing: -0.015em; max-width: 20ch; margin: 22px auto 0; }
+  .philosophy blockquote .ac { color: var(--brass-200); }
+  .philosophy .dvr { width: 46px; height: 1px; background: rgba(199,154,69,0.5); margin: 30px auto 0; }
+
+  /* cta */
+  .cta-sec h2 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(28px, 4vw, 46px); line-height: 1.16; letter-spacing: -0.02em; margin-top: 14px; max-width: 22ch; }
+  .slip { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 40px; padding: 24px 26px; background: var(--surface-warm); border: 1px solid var(--line); border-radius: 8px; position: relative; flex-wrap: wrap; }
+  .slip::before { content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; background: var(--brass-500); border-radius: 2px; }
+  .slip .k { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-subtle); }
+  .slip .v { font-family: var(--font-serif); font-size: 22px; font-weight: 600; margin-top: 5px; }
+  .slip .vr { font-size: 14px; color: var(--text-muted); margin-top: 3px; }
+
+  /* footer */
+  footer.site { border-top: 1px solid var(--line); padding: 40px 0 56px; }
+  footer.site .row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  footer.site .chapter { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--text-muted); }
+  footer.site .links { display: flex; gap: 22px; }
+  footer.site .links a { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+  footer.site .links a:hover { color: var(--brand); }
+  footer.site .folio { font-size: 13px; color: var(--text-subtle); }
+
+  svg.mk { display: block; }
+
+  @media (max-width: 860px) {
+    .hero .grid { grid-template-columns: 1fr; }
+    .hero .device { display: none; }
+    .feat-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    nav.main { display: none; }
+  }
+</style>
 </head>
 <body>
 
-    <header class="running-header ink-in">
-        <span class="brand">Journnah <span class="vol">· vol. iv</span></span>
-        <span class="date">A journal for the Qurʾān</span>
-    </header>
+  <header class="site">
+    <div class="wrap bar">
+      <a class="brandlock" href="#home">
+        <span id="logo"></span>
+        <span class="wm">Journnah<span class="dot">.</span></span>
+      </a>
+      <nav class="main">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <span class="vol">· a journal for the Qur'an</span>
+      </nav>
+    </div>
+  </header>
 
-    <div class="page">
-
-        <!-- ─── Hero ──────────────────────────────── -->
-        <section class="title-page ink-in" id="home">
-
-            <p class="eyebrow">— Reflect. Journal. Grow. —</p>
-
-            <h1 class="display-hero">
-                Reflect. Journal. <em class="ochre">Grow.</em>
-            </h1>
-
-            <p class="lead drop-cap">
-                A minimalist Islamic journaling app designed to deepen your connection with the Qurʾān through guided reflection and spiritual wellness.
-            </p>
-
-            <svg class="rule long" viewBox="0 0 280 6" aria-hidden="true">
-                <path d="M2 3 Q 70 2.4 140 3 T 278 3"
-                      fill="none" stroke="currentColor" stroke-width="0.7"
-                      stroke-linecap="round" opacity="0.78"/>
-            </svg>
-
-        </section>
-
-        <!-- ─── Features ──────────────────────────── -->
-        <section class="toc-section" id="features" data-reveal>
-
-            <div class="section-head">
-                <span class="small-caps ochre">— What Journnah offers —</span>
-                <h2 class="display-large">
-                    A comprehensive <em class="ochre">spiritual wellness</em> companion.
-                </h2>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap grid">
+      <div>
+        <span class="eyebrow">Reflect · Journal · Grow</span>
+        <h1>Reflect. Journal.<br/><span class="ac">Grow.</span></h1>
+        <p class="lead">A minimalist Islamic journaling app designed to deepen your connection with the Qur'an through guided reflection and spiritual wellness.</p>
+        <div class="cta">
+          <span class="store dark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.3 1.3c.1 1-.3 2-.9 2.7-.6.8-1.6 1.4-2.6 1.3-.1-1 .4-2 1-2.6.6-.8 1.7-1.3 2.5-1.4zM19 17.4c-.5 1.1-.7 1.6-1.3 2.6-.9 1.4-2.1 3.1-3.6 3.1-1.3 0-1.7-.9-3.5-.8-1.8 0-2.2.8-3.5.8-1.5 0-2.6-1.5-3.5-2.9C1 17 .8 12.4 2.4 10c.9-1.3 2.3-2.1 3.6-2.1 1.4 0 2.2.8 3.4.8 1.1 0 1.8-.8 3.4-.8 1.2 0 2.4.6 3.3 1.7-2.9 1.6-2.4 5.7.9 6.8z"/></svg> App Store</span>
+          <span class="store line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.3c-.3.2-.5.6-.5 1.1v17.2c0 .5.2.9.5 1.1l9.1-9.7L3.6 2.3zm10.2 8.3l2.4-2.6-9.3-5.3 6.9 7.9zm0 2.8l-6.9 7.9 9.3-5.3-2.4-2.6zm1.4-1.5l2.9-1.6c.7-.4.7-1.4 0-1.8l-2.9-1.6-2.6 2.8 2.6 2.8z"/></svg> Google Play</span>
+        </div>
+        <p class="soon">Coming soon to iOS &amp; Android.</p>
+      </div>
+      <div>
+        <div class="device">
+          <div class="notch"></div>
+          <div class="scr">
+            <div class="sb"><span>9:41</span><span>●●● ▾ ▮</span></div>
+            <div class="tb"><span class="wm">Journnah<span class="dot">.</span></span><span class="mt">Tue · 12 May</span></div>
+            <div class="pad">
+              <div class="hr"></div>
+              <div class="kick">The verse for today</div>
+              <div class="ar">فَبِأَيِّ آلَاءِ رَبِّكُمَا تُكَذِّبَانِ</div>
+              <div class="tr">So which of the favors of your Lord would you deny?</div>
+              <div class="rf">Surah Ar-Rahman · 55 : 13</div>
+              <div class="cta2"><span class="un">Reflect on this</span> →</div>
+              <div class="hr t"></div>
+              <div class="mini"><span class="m"><b>12</b> day streak</span><span class="m"><b>23</b> reflections</span><span class="m"><b>6</b> surahs</span></div>
+              <div class="hr t"></div>
+              <div class="seclab">Recently kept</div>
+              <div class="erow"><span class="sp" style="background:var(--mood-steady)"></span><div><div class="er">Ar-Ra'd · 13:28</div><div class="et">On finding rest in remembrance</div></div><span class="tm">Yest.</span></div>
+              <div class="erow"><span class="sp" style="background:var(--mood-light)"></span><div><div class="er">Ad-Duha · 93:5</div><div class="et">The morning will be kinder</div></div><span class="tm">Sun</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <ol class="toc-list">
-                <li class="toc-row">
-                    <span class="numeral">i.</span>
-                    <span class="heading">
-                        <span class="name">Quranic Reflections</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Select any verse from the Qurʾān and engage in deep, meaningful reflection. Guided journaling helps you connect with divine guidance on a personal level.</span>
-                </li>
+  <hr class="rule" />
 
-                <li class="toc-row">
-                    <span class="numeral">ii.</span>
-                    <span class="heading">
-                        <span class="name">Morning &amp; Evening Reflections</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Start your day with divine guidance and end it with contemplation. Time-based reflection prompts help you maintain a consistent spiritual practice.</span>
-                </li>
+  <!-- FEATURES -->
+  <section class="band" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What Journnah offers</span>
+        <h2>A comprehensive <span class="ac">spiritual wellness</span> companion.</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat"><span class="num">i.</span><div><div class="ft">Qur'anic Reflections</div><div class="fd">Select any verse from the Qur'an and engage in deep, meaningful reflection. Guided journaling helps you connect with divine guidance on a personal level.</div></div></div>
+        <div class="feat"><span class="num">ii.</span><div><div class="ft">Morning &amp; Evening Reflections</div><div class="fd">Start your day with divine guidance and end it with contemplation. Time-based prompts help you maintain a consistent spiritual practice.</div></div></div>
+        <div class="feat"><span class="num">iii.</span><div><div class="ft">Names of Allah</div><div class="fd">Reflect on the beautiful names and attributes of Allah. Each name comes with guidance to help you understand and internalise divine qualities.</div></div></div>
+        <div class="feat"><span class="num">iv.</span><div><div class="ft">Personal Journaling</div><div class="fd">Write your thoughts, insights, and reflections in a beautiful, distraction-free environment. Track your mood and organise entries with tags.</div></div></div>
+        <div class="feat"><span class="num">v.</span><div><div class="ft">Mood Tracking</div><div class="fd">Track your emotional state alongside your reflections. Understand patterns in your spiritual journey and personal growth over time.</div></div></div>
+        <div class="feat"><span class="num">vi.</span><div><div class="ft">Review &amp; Insights</div><div class="fd">Review your past reflections, see patterns, and gain insights into your spiritual growth. Revisit meaningful moments from your journey.</div></div></div>
+        <div class="feat"><span class="num">vii.</span><div><div class="ft">Surprise Me</div><div class="fd">Let the app suggest verses for reflection. Discover new insights and verses you might not have encountered otherwise.</div></div></div>
+      </div>
+    </div>
+  </section>
 
-                <li class="toc-row">
-                    <span class="numeral">iii.</span>
-                    <span class="heading">
-                        <span class="name">Names of Allah</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Reflect on the beautiful names and attributes of Allah. Each name comes with guidance to help you understand and internalise divine qualities.</span>
-                </li>
+  <hr class="rule" />
 
-                <li class="toc-row">
-                    <span class="numeral">iv.</span>
-                    <span class="heading">
-                        <span class="name">Personal Journaling</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Write your thoughts, insights, and reflections in a beautiful, distraction-free environment. Track your mood and organise entries with tags.</span>
-                </li>
+  <!-- ABOUT -->
+  <section class="band about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2 class="serif" style="font-weight:500;font-size:clamp(32px,4.5vw,52px);line-height:1.1;letter-spacing:-0.02em;margin:14px 0 24px;max-width:16ch;">A calm space for <span class="ac">spiritual growth.</span></h2>
+        <p class="lead">Journnah is designed with a minimalist, contemplative aesthetic that creates a peaceful environment for reflection. We believe spiritual growth comes from consistent, mindful practice — and our app is built to support that journey.</p>
+        <p class="aside">Whether you're starting your day with morning reflection, ending it with evening contemplation, or taking a moment anytime to connect with divine guidance, Journnah provides the tools and structure you need.</p>
+      </div>
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:14px;">By design</span>
+        <ul class="about-list">
+          <li>Offline support for uninterrupted reflection.</li>
+          <li>Beautiful Arabic text with translations.</li>
+          <li>Privacy-first — all data stored locally.</li>
+          <li>Dark mode for comfortable reading.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <li class="toc-row">
-                    <span class="numeral">v.</span>
-                    <span class="heading">
-                        <span class="name">Mood Tracking</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Track your emotional state alongside your reflections. Understand patterns in your spiritual journey and personal growth over time.</span>
-                </li>
+  <!-- PHILOSOPHY -->
+  <section class="band philosophy">
+    <div class="wrap">
+      <span class="eyebrow">Thoughtfully designed</span>
+      <blockquote>Every element of Journnah is crafted to minimise distraction and maximise focus — a warm palette and generous spacing create a calming atmosphere, <span class="ac">respectful of your time and attention.</span></blockquote>
+      <div class="dvr"></div>
+    </div>
+  </section>
 
-                <li class="toc-row">
-                    <span class="numeral">vi.</span>
-                    <span class="heading">
-                        <span class="name">Review &amp; Insights</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Review your past reflections, see patterns, and gain insights into your spiritual growth. Revisit meaningful moments from your journey.</span>
-                </li>
+  <!-- CTA -->
+  <section class="band cta-sec" id="contact">
+    <div class="wrap">
+      <span class="eyebrow">Begin your journey</span>
+      <h2>Coming soon to iOS &amp; Android. <span class="ac">Join us</span> in creating a more mindful, reflective spiritual practice.</h2>
+      <div class="slip">
+        <div>
+          <div class="k">Get in touch</div>
+          <div class="v">Write to us</div>
+          <div class="vr">journnahapp@journnah.ca</div>
+        </div>
+        <a class="action" href="mailto:journnahapp@journnah.ca"><span class="un">write to us</span> →</a>
+      </div>
+    </div>
+  </section>
 
-                <li class="toc-row">
-                    <span class="numeral">vii.</span>
-                    <span class="heading">
-                        <span class="name">Surprise Me</span>
-                        <span class="leader" aria-hidden="true"></span>
-                    </span>
-                    <span class="folio">—</span>
-                    <span class="desc">Let the app suggest verses for reflection. Discover new insights and verses you might not have encountered otherwise.</span>
-                </li>
-            </ol>
+  <footer class="site">
+    <div class="wrap row">
+      <span class="chapter">"Reflect. Journal. Grow."</span>
+      <div class="links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <span class="folio">© 2026 Journnah</span>
+    </div>
+  </footer>
 
-        </section>
-
-        <!-- ─── About ─────────────────────────────── -->
-        <section id="about" data-reveal>
-
-            <span class="small-caps ochre" style="display:block; margin-bottom: 12px;">— About —</span>
-            <h2 class="display-large" style="margin-bottom: 28px; max-width: 18ch;">
-                A calm space for <em class="ochre">spiritual growth.</em>
-            </h2>
-
-            <p class="lead drop-cap" style="margin-bottom: 18px;">
-                Journnah is designed with a minimalist, contemplative aesthetic that creates a peaceful environment for reflection. We believe that spiritual growth comes from consistent, mindful practice — and our app is built to support that journey.
-            </p>
-
-            <p class="aside" style="margin-bottom: 36px; max-width: 56ch;">
-                Whether you're starting your day with morning reflection, ending it with evening contemplation, or taking a moment anytime to connect with divine guidance, Journnah provides the tools and structure you need.
-            </p>
-
-            <ul class="about-list">
-                <li>Offline support for uninterrupted reflection.</li>
-                <li>Beautiful Arabic text with translations.</li>
-                <li>Privacy-first — all data stored locally.</li>
-                <li>Dark mode for comfortable reading.</li>
-            </ul>
-
-        </section>
-
-        <!-- ─── Philosophy ────────────────────────── -->
-        <section class="philosophy-quote" data-reveal>
-
-            <span class="small-caps ochre" style="display:block; margin-bottom: 12px;">— Thoughtfully designed —</span>
-
-            <blockquote class="pull-quote">
-                Every element of Journnah is crafted to minimise distraction and maximise focus. A warm, earthy palette and generous spacing create a calming atmosphere that encourages deep reflection — clean, intuitive, and <em class="ochre">respectful of your time and attention.</em>
-            </blockquote>
-
-            <svg class="rule short center" viewBox="0 0 100 6" aria-hidden="true">
-                <path d="M2 3 Q 30 2.5 50 3 T 98 3"
-                      fill="none" stroke="currentColor" stroke-width="0.7"
-                      stroke-linecap="round" opacity="0.78"/>
-            </svg>
-
-        </section>
-
-        <!-- ─── CTA ───────────────────────────────── -->
-        <section class="cta-section" id="contact" data-reveal>
-            <span class="small-caps ochre">— Begin your journey —</span>
-            <h2 class="display-medium">
-                Coming soon to iOS &amp; Android. <em class="ochre">Join us</em> in creating a more mindful, reflective spiritual practice.
-            </h2>
-
-            <div class="slip-marker">
-                <div class="slip-left">
-                    <span class="eyebrow tiny-caps">Slip marker · contact</span>
-                    <div class="surah">Get in touch</div>
-                    <div class="range">journnahapp <em>at</em> journnah.ca</div>
-                </div>
-                <a class="text-action" href="mailto:journnahapp@journnah.ca">
-                    write to us <span class="star">✦</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- ─── Page footer (folio) ──────────────── -->
-        <footer class="page-footer">
-            <span class="chapter">"Reflect. Journal. Grow."</span>
-            <span class="folio">&copy; 2026 Journnah</span>
-        </footer>
-
-    </div><!-- /.page -->
-
-    <nav class="tab-strip" aria-label="Sections">
-        <a class="tab active" href="#home">
-            <span class="dot" aria-hidden="true"></span>
-            Home
-        </a>
-        <a class="tab" href="#features">
-            <span class="dot" aria-hidden="true"></span>
-            Features
-        </a>
-        <a class="tab" href="#about">
-            <span class="dot" aria-hidden="true"></span>
-            About
-        </a>
-        <a class="tab" href="/privacy.html">
-            <span class="dot" aria-hidden="true"></span>
-            Privacy
-        </a>
-        <a class="tab" href="/terms.html">
-            <span class="dot" aria-hidden="true"></span>
-            Terms
-        </a>
-    </nav>
-
-    <script>
-        // Scroll-triggered ink-fade for sections
-        if ('IntersectionObserver' in window) {
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) {
-                        e.target.classList.add('is-visible');
-                        io.unobserve(e.target);
-                    }
-                });
-            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-            document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
-        } else {
-            document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-visible'));
-        }
-
-        // Active tab follows the section currently in view
-        const sections = ['home', 'features', 'about', 'contact']
-            .map(id => document.getElementById(id))
-            .filter(Boolean);
-        const tabIds = ['home', 'features', 'about', 'contact'];
-        const tabEls = Array.from(document.querySelectorAll('.tab-strip .tab'));
-        if ('IntersectionObserver' in window && sections.length) {
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) {
-                        const idx = tabIds.indexOf(e.target.id);
-                        if (idx === -1) return;
-                        tabEls.forEach(t => t.classList.remove('active'));
-                        if (tabEls[idx]) tabEls[idx].classList.add('active');
-                    }
-                });
-            }, { threshold: 0.3 });
-            sections.forEach(s => obs.observe(s));
-        }
-    </script>
-
+  <script src="logo.js"></script>
 </body>
 </html>
